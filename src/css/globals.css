@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./cofo-sans.css";
+
+@theme {
+    /* Font Families */
+    --font-family-cofo-sans: 'CoFo Sans Trial', sans-serif;
+
+    /* Colors */
+    --color-dark: #484E5B;
+    --color-blue-light: #9298A5;
+    --color-red-01: #E92A3A;
+    --color-dark-gray: #2D2D2D;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: white !important;
+}
+
+.swiper-button-prev{
+    left: calc(( 100% - 1536px ) / 2) !important;
+}
+
+.swiper-button-next{
+    right: calc(( 100% - 1536px ) / 2) !important;
+}

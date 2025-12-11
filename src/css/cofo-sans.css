@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-Hairline.eot');
+    src: local('CoFo Sans Trial Hairline'), local('CoFoSansTrial-Hairline'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Hairline.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Hairline.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Hairline.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Hairline.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-Bold.eot');
+    src: local('CoFo Sans Trial Bold'), local('CoFoSansTrial-Bold'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Bold.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Bold.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-Italic.eot');
+    src: local('CoFo Sans Trial Italic'), local('CoFoSansTrial-Italic'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Italic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Italic.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Italic.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-LightItalic.eot');
+    src: local('CoFo Sans Trial Light Italic'), local('CoFoSansTrial-LightItalic'),
+        url('/fonts/cofo-sans/CoFoSansTrial-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-LightItalic.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-LightItalic.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-Black.eot');
+    src: local('CoFo Sans Trial Black'), local('CoFoSansTrial-Black'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Black.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Black.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Black.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-HairlineItalic.eot');
+    src: local('CoFo Sans Trial Hairline Italic'), local('CoFoSansTrial-HairlineItalic'),
+        url('/fonts/cofo-sans/CoFoSansTrial-HairlineItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-HairlineItalic.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-HairlineItalic.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-HairlineItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-BlackItalic.eot');
+    src: local('CoFo Sans Trial Black Italic'), local('CoFoSansTrial-BlackItalic'),
+        url('/fonts/cofo-sans/CoFoSansTrial-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-BlackItalic.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-BlackItalic.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-Light.eot');
+    src: local('CoFo Sans Trial Light'), local('CoFoSansTrial-Light'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Light.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Light.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Light.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-BoldItalic.eot');
+    src: local('CoFo Sans Trial Bold Italic'), local('CoFoSansTrial-BoldItalic'),
+        url('/fonts/cofo-sans/CoFoSansTrial-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-BoldItalic.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-BoldItalic.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-Thin.eot');
+    src: local('CoFo Sans Trial Thin'), local('CoFoSansTrial-Thin'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Thin.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Thin.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Thin.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-MediumItalic.eot');
+    src: local('CoFo Sans Trial Medium Italic'), local('CoFoSansTrial-MediumItalic'),
+        url('/fonts/cofo-sans/CoFoSansTrial-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-MediumItalic.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-MediumItalic.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-ThinItalic.eot');
+    src: local('CoFo Sans Trial Thin Italic'), local('CoFoSansTrial-ThinItalic'),
+        url('/fonts/cofo-sans/CoFoSansTrial-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-ThinItalic.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-ThinItalic.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-Medium.eot');
+    src: local('CoFo Sans Trial Medium'), local('CoFoSansTrial-Medium'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Medium.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Medium.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CoFo Sans Trial';
+    src: url('/fonts/cofo-sans/CoFoSansTrial-Regular.eot');
+    src: local('CoFo Sans Trial Regular'), local('CoFoSansTrial-Regular'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Regular.woff2') format('woff2'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Regular.woff') format('woff'),
+        url('/fonts/cofo-sans/CoFoSansTrial-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
