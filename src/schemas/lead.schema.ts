@@ -11,7 +11,13 @@ export const leadSchema = z.object({
 		.string()
 		.trim()
 		.regex(/^\+998[0-9]{9}$/, "Введите корректный номер телефона"),
-	city: z.string().trim().nonempty("Город обязателен").min(3, "Город должен содержать минимум 3 символа"),
+	city: z
+		.string()
+		.trim()
+		.nonempty("Город обязателен")
+		.min(3, "Город должен содержать минимум 3 символа"),
+
+	agree: z.boolean("Политика конфиденциальности обязательна"),
 });
 
 export type LeadSchemaType = z.infer<typeof leadSchema>;

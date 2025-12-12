@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { Container } from "@/components/widgets/container";
+import { Group } from "@/components/widgets/groups";
 import { pudus } from "@/defaults/pudu.data";
 import { unitrees } from "@/defaults/unitrees.data";
+import { useCartStore } from "@/stores/cart.store";
 import { AddToCartButton } from "./add-to-cart-button";
 import { ProductCarousel } from "./product-carousel";
 import { ProductQuantity } from "./product-quantity";
@@ -11,8 +13,8 @@ import { ProductQuantity } from "./product-quantity";
 export const ProductContent = ({ productId }: Props) => {
 	const allProducts = [...unitrees, ...pudus];
 	const product = allProducts.find((item) => item.id === productId);
-
 	const [quantity, setQuantity] = useState(1);
+	const addItem = useCartStore((s) => s.addItem);
 
 	if (!product) {
 		return (
@@ -23,44 +25,41 @@ export const ProductContent = ({ productId }: Props) => {
 	}
 
 	return (
-		<section data-slot="product-content" className="pt-44 pb-10">
+		<section className="pt-44 pb-10">
 			<Container>
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-					{/* LEFT — CAROUSEL */}
-					<div>
+				<div className="space-y-12">
+					<h2 className="text-3xl font-bold">{product.name}</h2>
+
+					<Group className="flex-row">
 						<ProductCarousel images={product.images} />
-					</div>
 
-					{/* RIGHT — INFO */}
-					<div className="space-y-6">
-						<h1 className="text-3xl font-bold leading-tight">{product.name}</h1>
-
-						{/* SHORT DESCRIPTION */}
-						<div
-							className="text-gray-700 text-lg leading-relaxed"
-							// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-							dangerouslySetInnerHTML={{ __html: product.short_description }}
-						/>
-
-						{/* QUANTITY + ADD TO CART */}
-						<div className="flex items-center gap-6 pt-2">
+						<div className="flex items-center gap-6 pt-4">
 							<ProductQuantity value={quantity} onChange={setQuantity} />
 
 							<AddToCartButton
 								onClick={() =>
-									console.log("Добавлено:", product.name, "x", quantity)
+									addItem({
+										...product,
+										quantity,
+										image: product.images[0] || "",
+									})
 								}
 							/>
 						</div>
-					</div>
-				</div>
+					</Group>
 
-				{/* FULL DESCRIPTION */}
-				<div
-					className="prose max-w-none mt-14 prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-800 prose-ul:list-disc prose-table:border prose-th:border prose-td:border space-y-6"
-					// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-					dangerouslySetInnerHTML={{ __html: product.full_description }}
-				/>
+					<div
+						className="text-lg text-gray-700 leading-relaxed"
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+						dangerouslySetInnerHTML={{ __html: product.short_description }}
+					/>
+
+					<div
+						className="prose max-w-none prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-800 prose-ul:list-disc prose-table:border prose-th:border prose-td:border"
+						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+						dangerouslySetInnerHTML={{ __html: product.full_description }}
+					/>
+				</div>
 			</Container>
 		</section>
 	);

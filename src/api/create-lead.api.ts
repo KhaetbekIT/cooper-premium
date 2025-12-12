@@ -1,6 +1,44 @@
 import type { LeadSchemaType } from "@/schemas/lead.schema";
+import type { CartItem } from "@/stores/cart.store";
 
-export const createLeadApi = async ({ body }: Params) => {
+export const createLeadApi = async ({ body, items = [], type }: Params) => {
+	if (type === "cart" && items.length === 0) {
+		return {
+			status: false,
+			message: "Вы не выбрали товары",
+		};
+	}
+
+	if (type === "cart" && items.length > 0 && !body.agree) {
+		return {
+			status: false,
+			message: "Вы должны согласиться с политикой конфиденциальности",
+		};
+	}
+
+	let company_info = `
+		<p><b>Город:</b> ${body.city}</p>
+		<p>Свяжитесь с клиентом для уточнения деталей.</p>
+	`;
+
+	if (body.agree && items.length > 0) {
+		const productsHTML = items
+			.map(
+				(item) => `
+				<li>
+					<b>${item.name}</b> — ${item.quantity} шт.
+				</li>
+			`,
+			)
+			.join("");
+
+		company_info = `
+			<p><b>Город:</b> ${body.city}</p>
+			<p><b>Выбранные товары:</b></p>
+			<ul>${productsHTML}</ul>
+		`;
+	}
+
 	try {
 		const response = await fetch("https://api.it911.uz/leads/", {
 			method: "POST",
@@ -12,28 +50,26 @@ export const createLeadApi = async ({ body }: Params) => {
 				email: body.email,
 				phone: body.phone,
 				company_name: "Cooper AI",
-				company_info: `Город: ${body.city} свяжитесь с клиентом для уточнения деталей.`,
+				company_info,
 			}),
 		});
 
-		if (!response.ok) {
-			throw new Error("Failed to create lead");
-		}
+		if (!response.ok) throw new Error();
 
 		return {
-			status: response.ok,
-			message: "Успешно создано",
+			status: true,
+			message: "Успешно отправлено",
 		};
-	} catch (error) {
-		console.error(error);
-
+	} catch {
 		return {
 			status: false,
-			message: "Что-то пошло не так",
+			message: "Ошибка при отправке",
 		};
 	}
 };
 
 interface Params {
 	body: LeadSchemaType;
+	items?: CartItem[];
+	type: "discuss" | "cart";
 }

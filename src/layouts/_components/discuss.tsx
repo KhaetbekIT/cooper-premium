@@ -29,11 +29,14 @@ export const Discuss = ({ isMobile, isScrolled }: Props) => {
 		reset,
 	} = useForm<LeadSchemaType>({
 		resolver: zodResolver(leadSchema),
+		defaultValues: {
+			agree: false,
+		},
 	});
 
 	const onSubmit = (data: LeadSchemaType) => {
 		startTransition(async () => {
-			const res = await createLeadApi({ body: data });
+			const res = await createLeadApi({ body: data, type: "discuss" });
 
 			if (!res.status) {
 				toast.error(res.message, { position: "top-center" });

@@ -1,7 +1,7 @@
 "use client";
 
 import LogoImage from "@public/logo.svg";
-import { Menu, Phone, ShoppingBasket, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import Image from "next/image";
 import { type ComponentProps, useEffect, useState } from "react";
 import { Separator } from "@/components/ui/separator";
@@ -10,6 +10,7 @@ import { Group } from "@/components/widgets/groups";
 import { RoutersConfig } from "@/configs/routers.config";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { Cart } from "./_components/cart";
 import { Discuss } from "./_components/discuss";
 
 export const HeaderLayout = ({
@@ -69,12 +70,7 @@ export const HeaderLayout = ({
 						</Group>
 
 						<Group className="hidden lg:flex flex-row items-center gap-6">
-							<Link
-								href={RoutersConfig.client.cart}
-								className="text-lg hover:text-red-01"
-							>
-								<ShoppingBasket />
-							</Link>
+							<Cart />
 
 							<Discuss isMobile={mobileOpen} isScrolled={isScrolled} />
 						</Group>
