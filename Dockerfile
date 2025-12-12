@@ -9,13 +9,9 @@ RUN corepack enable pnpm && pnpm i
 FROM base AS builder
 WORKDIR /app
 
-ARG ENV_FILE=.env.production
-ENV ENV_FILE=${ENV_FILE}
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-
-RUN cp ${ENV_FILE} .env.production
 
 RUN corepack enable pnpm && pnpm run build
 
@@ -23,7 +19,7 @@ FROM base AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
-ENV PORT=3000
+ENV PORT=3001
 ENV HOSTNAME=0.0.0.0
 
 COPY --from=builder /app/public ./public
@@ -36,6 +32,6 @@ RUN mkdir -p .next/cache && \
 
 USER node
 
-EXPOSE 3000
+EXPOSE 3001
 
 CMD ["node", "server.js"]
