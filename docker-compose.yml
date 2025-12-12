@@ -1,0 +1,10 @@
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cooper
+    ports:
+      - "3000:3000"
+    restart: always
