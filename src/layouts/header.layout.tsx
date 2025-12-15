@@ -12,6 +12,7 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { Cart } from "./_components/cart";
 import { Discuss } from "./_components/discuss";
+import { Serach } from "./_components/search";
 
 export const HeaderLayout = ({
 	className,
@@ -31,7 +32,7 @@ export const HeaderLayout = ({
 			{...props}
 			className={cn(
 				"fixed top-0 left-0 right-0 z-50 transition-colors",
-				isScrolled || mobileOpen ? "bg-white shadow-sm" : "bg-transparent",
+				{ "bg-white shadow-sm": isScrolled },
 				className,
 			)}
 		>
@@ -70,6 +71,8 @@ export const HeaderLayout = ({
 						</Group>
 
 						<Group className="hidden lg:flex flex-row items-center gap-6">
+							<Serach />
+
 							<Cart />
 
 							<Discuss isMobile={mobileOpen} isScrolled={isScrolled} />

@@ -8,10 +8,10 @@ export const AddToCartButton = ({ onClick }: Props) => {
 		<Button
 			onClick={onClick}
 			variant={"black"}
-			className="flex items-center gap-2  px-5 py-3 text-white font-medium  active:scale-95 transition"
+			className="px-5 py-3 text-white font-medium active:scale-95 transition"
 		>
 			<ShoppingCart className="size-5" />
-			<span>Добавить в корзину</span>
+			<span>В корзину</span>
 		</Button>
 	);
 };

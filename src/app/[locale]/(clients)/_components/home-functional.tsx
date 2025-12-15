@@ -54,7 +54,7 @@ export const HomeFunctional = () => {
 						</p>
 					</div>
 
-					<div className="space-y-4 px-4" >
+					<div className="space-y-4 px-4">
 						<div className="flex justify-center">
 							<BarChart2
 								className="text-dark-gray"

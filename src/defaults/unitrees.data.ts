@@ -25,71 +25,71 @@ export const unitrees = [
 
 <h3>Модели и сравнительная таблица</h3>
 
-<table border="1" cellpadding="6" cellspacing="0">
-  <thead>
-    <tr>
-      <th>Параметр</th>
-      <th>B2-1</th>
-      <th>B2 LiDAR-1</th>
-      <th>B2 LiDAR-2</th>
-      <th>B2-W-1</th>
-      <th>B2-W LiDAR-1</th>
-      <th>B2-W LiDAR-2</th>
+<table class="border border-gray-200" cellpadding="6" cellspacing="0">
+  <thead class="[&_tr]:border-b [&_tr]:border-b-gray-200">
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Параметр</th>
+      <td class="px-2.5 py-2 ">B2-1</th>
+      <td class="px-2.5 py-2 ">B2 LiDAR-1</th>
+      <td class="px-2.5 py-2 ">B2 LiDAR-2</th>
+      <td class="px-2.5 py-2 ">B2-W-1</th>
+      <td class="px-2.5 py-2 ">B2-W LiDAR-1</th>
+      <td class="px-2.5 py-2 ">B2-W LiDAR-2</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Вес (с батареей)</td>
-      <td>~60 кг</td>
-      <td>~65 кг</td>
-      <td>~65 кг</td>
-      <td>~70 кг</td>
-      <td>~75 кг</td>
-      <td>~75 кг</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Вес (с батареей)</td>
+      <td class="px-2.5 py-2 ">~60 кг</td>
+      <td class="px-2.5 py-2 ">~65 кг</td>
+      <td class="px-2.5 py-2 ">~65 кг</td>
+      <td class="px-2.5 py-2 ">~70 кг</td>
+      <td class="px-2.5 py-2 ">~75 кг</td>
+      <td class="px-2.5 py-2 ">~75 кг</td>
     </tr>
 
-    <tr>
-      <td>Модуль восприятия</td>
-      <td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Модуль восприятия</td>
+      <td class="px-2.5 py-2 ">
         Камеры глубины<br />
         HD-камеры
       </td>
-      <td>
+      <td class="px-2.5 py-2 ">
         Камеры глубины<br />
         HD-камеры<br />
         32-линейный 3D LiDAR
       </td>
-      <td>
+      <td class="px-2.5 py-2 ">
         Камеры глубины<br />
         HD-камеры<br />
         32-линейный 3D LiDAR
       </td>
-      <td>
+      <td class="px-2.5 py-2 ">
         Камеры глубины<br />
         HD-камеры
       </td>
-      <td>
+      <td class="px-2.5 py-2 ">
         Камеры глубины<br />
         HD-камеры<br />
         32-линейный 3D LiDAR
       </td>
-      <td>
+      <td class="px-2.5 py-2 ">
         Камеры глубины<br />
         HD-камеры<br />
         32-линейный 3D LiDAR
       </td>
     </tr>
 
-    <tr>
-      <td>Комплектация</td>
-      <td colspan="6">
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Комплектация</td>
+      <td class="px-2.5 py-2 " colspan="6">
         Стандартные: аккумулятор, зарядное устройство, контроллер.
       </td>
     </tr>
 
-    <tr>
-      <td>Дополнительно</td>
-      <td colspan="6">
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Дополнительно</td>
+      <td class="px-2.5 py-2 " colspan="6">
         Блоки i7 могут быть заменены на Nvidia Jetson Orin NX (100 TOPS).  
         Блок i7 для радара — не заменяем.
       </td>
@@ -152,39 +152,39 @@ export const unitrees = [
 
 <h3>Комплектации</h3>
 
-<table border="1" cellpadding="6">
-  <thead>
-    <tr>
-      <th>Модель</th>
-      <th>Степени свободы</th>
-      <th>Манипуляторы</th>
-      <th>Вес</th>
+<table class="border border-gray-200" cellpadding="6">
+  <thead class="[&_tr]:border-b [&_tr]:border-b-gray-200">
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Модель</th>
+      <td class="px-2.5 py-2 ">Степени свободы</th>
+      <td class="px-2.5 py-2 ">Манипуляторы</th>
+      <td class="px-2.5 py-2 ">Вес</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>G1 Basic</td>
-      <td>23</td>
-      <td>—</td>
-      <td>~35 кг</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">G1 Basic</td>
+      <td class="px-2.5 py-2 ">23</td>
+      <td class="px-2.5 py-2 ">—</td>
+      <td class="px-2.5 py-2 ">~35 кг</td>
     </tr>
-    <tr>
-      <td>G1 Edu Standard (U1)</td>
-      <td>23</td>
-      <td>—</td>
-      <td>~35 кг</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">G1 Edu Standard (U1)</td>
+      <td class="px-2.5 py-2 ">23</td>
+      <td class="px-2.5 py-2 ">—</td>
+      <td class="px-2.5 py-2 ">~35 кг</td>
     </tr>
-    <tr>
-      <td>G1 Edu Plus (U2)</td>
-      <td>29</td>
-      <td>Двупальцевые Dex3-1</td>
-      <td>~35 кг</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">G1 Edu Plus (U2)</td>
+      <td class="px-2.5 py-2 ">29</td>
+      <td class="px-2.5 py-2 ">Двупальцевые Dex3-1</td>
+      <td class="px-2.5 py-2 ">~35 кг</td>
     </tr>
-    <tr>
-      <td>G1 Edu Ultimate A/B/C/D</td>
-      <td>41–43</td>
-      <td>Пяти-пальцевые Inspire RH56</td>
-      <td>~35 кг</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">G1 Edu Ultimate A/B/C/D</td>
+      <td class="px-2.5 py-2 ">41–43</td>
+      <td class="px-2.5 py-2 ">Пяти-пальцевые Inspire RH56</td>
+      <td class="px-2.5 py-2 ">~35 кг</td>
     </tr>
   </tbody>
 </table>
@@ -272,24 +272,24 @@ export const unitrees = [
 
 <h3>Комплектации LiDAR</h3>
 
-<table border="1" cellpadding="6">
-  <thead>
-    <tr>
-      <th>Модель</th>
-      <th>LiDAR</th>
-      <th>Функции</th>
+<table class="border border-gray-200" cellpadding="6">
+  <thead class="[&_tr]:border-b [&_tr]:border-b-gray-200">
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Модель</th>
+      <td class="px-2.5 py-2 ">LiDAR</th>
+      <td class="px-2.5 py-2 ">Функции</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>U1 / U3 / U5</td>
-      <td>Livox Mid-360</td>
-      <td>Навигация, карты, поддержка SDK</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">U1 / U3 / U5</td>
+      <td class="px-2.5 py-2 ">Livox Mid-360</td>
+      <td class="px-2.5 py-2 ">Навигация, карты, поддержка SDK</td>
     </tr>
-    <tr>
-      <td>U2 / U4 / U6</td>
-      <td>Hesai XT16</td>
-      <td>Высокоточная навигация</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">U2 / U4 / U6</td>
+      <td class="px-2.5 py-2 ">Hesai XT16</td>
+      <td class="px-2.5 py-2 ">Высокоточная навигация</td>
     </tr>
   </tbody>
 </table>
@@ -343,44 +343,44 @@ export const unitrees = [
 
 <h3>Сравнение AIR и PRO</h3>
 
-<table border="1" cellpadding="6">
-  <thead>
-    <tr>
-      <th>Характеристика</th>
-      <th>GO2 AIR</th>
-      <th>GO2 PRO</th>
+<table class="border border-gray-200" cellpadding="6">
+  <thead class="[&_tr]:border-b [&_tr]:border-b-gray-200">
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Характеристика</th>
+      <td class="px-2.5 py-2 ">GO2 AIR</th>
+      <td class="px-2.5 py-2 ">GO2 PRO</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Нагрузка</td>
-      <td>7 кг</td>
-      <td>8 кг</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Нагрузка</td>
+      <td class="px-2.5 py-2 ">7 кг</td>
+      <td class="px-2.5 py-2 ">8 кг</td>
     </tr>
-    <tr>
-      <td>Скорость</td>
-      <td>2.5 м/с</td>
-      <td>3.5 м/с</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Скорость</td>
+      <td class="px-2.5 py-2 ">2.5 м/с</td>
+      <td class="px-2.5 py-2 ">3.5 м/с</td>
     </tr>
-    <tr>
-      <td>3D-лидар</td>
-      <td>Есть</td>
-      <td>Улучшенный широкоугольный</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">3D-лидар</td>
+      <td class="px-2.5 py-2 ">Есть</td>
+      <td class="px-2.5 py-2 ">Улучшенный широкоугольный</td>
     </tr>
-    <tr>
-      <td>Связь</td>
-      <td>WiFi 6 / Bluetooth</td>
-      <td>WiFi 6 / Bluetooth / eSIM 4G</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Связь</td>
+      <td class="px-2.5 py-2 ">WiFi 6 / Bluetooth</td>
+      <td class="px-2.5 py-2 ">WiFi 6 / Bluetooth / eSIM 4G</td>
     </tr>
-    <tr>
-      <td>Голосовое управление</td>
-      <td>Нет</td>
-      <td>Да</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Голосовое управление</td>
+      <td class="px-2.5 py-2 ">Нет</td>
+      <td class="px-2.5 py-2 ">Да</td>
     </tr>
-    <tr>
-      <td>Подсветка</td>
-      <td>Нет</td>
-      <td>Да, 3 Вт</td>
+    <tr class="border-b border-b-gray-200">
+      <td class="px-2.5 py-2 ">Подсветка</td>
+      <td class="px-2.5 py-2 ">Нет</td>
+      <td class="px-2.5 py-2 ">Да, 3 Вт</td>
     </tr>
   </tbody>
 </table>

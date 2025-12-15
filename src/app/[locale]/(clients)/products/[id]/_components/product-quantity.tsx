@@ -4,6 +4,7 @@ import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Group } from "@/components/widgets/groups";
 
 export const ProductQuantity = ({ value, onChange, className }: Props) => {
 	const [count, setCount] = useState(value ?? 1);
@@ -15,7 +16,7 @@ export const ProductQuantity = ({ value, onChange, className }: Props) => {
 	};
 
 	return (
-		<div className={cn("flex items-center gap-3", className)}>
+		<Group className={cn("flex-row gap-2 items-center", className)}>
 			<Button
 				variant={"outline"}
 				onClick={() => update(count - 1)}
@@ -33,7 +34,7 @@ export const ProductQuantity = ({ value, onChange, className }: Props) => {
 			>
 				<Plus className="size-4" />
 			</Button>
-		</div>
+		</Group>
 	);
 };
 

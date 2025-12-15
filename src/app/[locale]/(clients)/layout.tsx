@@ -3,85 +3,66 @@ import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "@/components/ui/sonner";
 import { Footer } from "@/layouts/footer.layout";
 import { HeaderLayout } from "@/layouts/header.layout";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { pudus } from "@/defaults/pudu.data";
+import { unitrees } from "@/defaults/unitrees.data";
+
+const productNames = [
+	...pudus.map((p) => p.name),
+	...unitrees.map((u) => u.name),
+];
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://cooperai.uz"),
 
 	title: {
-		default: "CooperAI — Роботы Unitree и Pudu в Узбекистане",
+		default: "CooperAI — Роботы Unitree и PUDU в Узбекистане",
 		template: "%s | CooperAI",
 	},
 
-	description:
-		"CooperAI — официальный поставщик роботов Unitree и Pudu в Узбекистане. Продажа, интеграция, сервис, обучение и инновационные роботизированные решения для бизнеса.",
+	description: `
+CooperAI — официальный поставщик роботов Unitree и PUDU в Узбекистане.
+Продажа, интеграция, сервис и обучение.
+Каталог: ${productNames.join(", ")}.
+	`.trim(),
 
 	keywords: [
-		"Unitree",
-		"Pudu",
 		"CooperAI",
 		"роботы Узбекистан",
 		"роботы Ташкент",
 		"промышленные роботы",
 		"сервисные роботы",
-		"роботы доставки",
-		"роботы для бизнеса",
-		"роботы для уборки",
 		"гуманоидные роботы",
 		"четвероногие роботы",
-		"инновационные роботы",
-		"купить робота",
-		"робот собака",
-		"Unitree GO2",
-		"Unitree GO2 Pro",
-		"Unitree B2",
-		"Unitree G1",
-		"Pudu CC1 Pro",
-		"Pudu CC1",
-		"Pudu MT1",
-		"Pudu MT1 Vac",
-		"Pudu SH1",
+		"AI роботы",
+		"автономные роботы",
+		"роботы для бизнеса",
+		"роботы для уборки",
 		"роботы для ресторанов",
 		"роботы для отелей",
 		"роботы для логистики",
 		"интеграция роботов",
 		"роботы под ключ",
-		"автономные роботы",
-		"AI роботы",
-		"роботы искусственный интеллект",
-		"роботы автоматизация",
-		"робот пылесос профессиональный",
+		"робот-собака",
+		"робот-пылесос",
 		"робот мойщик полов",
 
-		"Unitree robotlari",
-		"Pudu robotlari",
-		"CooperAI Uzbekistan",
+		...productNames,
+		...productNames.map((n) => `${n} купить`),
+		...productNames.map((n) => `${n} цена`),
+		...productNames.map((n) => `${n} Узбекистан`),
+		...productNames.map((n) => `${n} Ташкент`),
+
 		"robotlar Uzbekistan",
-		"robotlar Toshkent",
-		"sanoat robotlari",
-		"xizmat robotlari",
-		"yetkazib berish robotlari",
-		"tozalash robotlari",
-		"restoran robotlari",
-		"mehmonxona robotlari",
-		"aqlly robotlar",
-		"sun’iy intellekt robotlari",
 		"robot sotib olish",
-		"robot it",
-		"Unitree GO2",
-		"Unitree GO2 Pro",
-		"Unitree G1",
-		"Unitree B2",
-		"Pudu CC1 Pro",
-		"Pudu MT1",
-		"Pudu MT1 Vac",
-		"Pudu SH1",
-		"logistika robotlari",
-		"avtonom robotlar",
 		"AI robotlar",
-		"robot integratsiyasi",
-		"robot yechimlari",
-		"robotlar biznes uchun",
+		"xizmat robotlari",
+		"sanoat robotlari",
 	],
+
+	authors: [{ name: "CooperAI" }],
+	creator: "CooperAI",
+	publisher: "CooperAI",
 
 	icons: {
 		icon: "/favicon.ico",
@@ -89,18 +70,17 @@ export const metadata: Metadata = {
 		apple: "/apple-touch-icon.png",
 	},
 
-	authors: [{ name: "CooperAI" }],
-	creator: "CooperAI",
-	publisher: "CooperAI",
-
 	openGraph: {
 		type: "website",
 		locale: "ru_RU",
 		url: "https://cooperai.uz",
 		siteName: "CooperAI",
-		title: "CooperAI — Роботы Unitree и Pudu в Узбекистане",
-		description:
-			"Продажа, интеграция и обслуживание роботов Unitree и Pudu. Профессиональные роботизированные решения для бизнеса.",
+		title: "CooperAI — Роботы Unitree и PUDU",
+		description: `
+Официальный каталог роботов Unitree и PUDU в Узбекистане.
+Модели: ${productNames.join(", ")}.
+Продажа, интеграция и сервис.
+		`.trim(),
 		images: [
 			{
 				url: "/og-image.png",
@@ -113,9 +93,8 @@ export const metadata: Metadata = {
 
 	twitter: {
 		card: "summary_large_image",
-		title: "CooperAI — инновационные роботы Unitree и Pudu",
-		description:
-			"Поставки, сервис, интеграция и обучение работе с роботами Unitree и Pudu в Узбекистане.",
+		title: "CooperAI — Роботы Unitree и PUDU",
+		description: `Каталог роботов: ${productNames.join(", ")}`,
 		images: ["/og-image.png"],
 	},
 
@@ -151,13 +130,15 @@ const ClientLayout = async ({ children }: LayoutProps<"/[locale]">) => {
 			</head>
 			<body className="min-h-screen flex flex-col justify-between">
 				<NextIntlClientProvider>
-					<HeaderLayout className="shrink-0" />
+					<NuqsAdapter>
+						<HeaderLayout className="shrink-0" />
 
-					<main className="flex-1">{children}</main>
+						<main className="flex-1">{children}</main>
 
-					<Footer className="shrink-0" />
+						<Footer className="shrink-0" />
 
-					<Toaster />
+						<Toaster />
+					</NuqsAdapter>
 				</NextIntlClientProvider>
 			</body>
 		</>

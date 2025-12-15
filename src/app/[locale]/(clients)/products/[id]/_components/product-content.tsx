@@ -27,13 +27,13 @@ export const ProductContent = ({ productId }: Props) => {
 	return (
 		<section className="pt-44 pb-10">
 			<Container>
-				<div className="space-y-12">
+				<div className="space-y-12 overflow-x-auto">
 					<h2 className="text-3xl font-bold">{product.name}</h2>
 
-					<Group className="flex-row">
+					<Group className="gap-6 xl:flex-row xl:items-center">
 						<ProductCarousel images={product.images} />
 
-						<div className="flex items-center gap-6 pt-4">
+						<Group className="flex-row justify-center items-center pt-4">
 							<ProductQuantity value={quantity} onChange={setQuantity} />
 
 							<AddToCartButton
@@ -45,7 +45,7 @@ export const ProductContent = ({ productId }: Props) => {
 									})
 								}
 							/>
-						</div>
+						</Group>
 					</Group>
 
 					<div
@@ -55,7 +55,7 @@ export const ProductContent = ({ productId }: Props) => {
 					/>
 
 					<div
-						className="prose max-w-none prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-800 prose-ul:list-disc prose-table:border prose-th:border prose-td:border"
+						className="prose max-w-none prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-800 prose-ul:list-disc space-y-5 prose-td:p-5"
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{ __html: product.full_description }}
 					/>

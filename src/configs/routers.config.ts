@@ -10,4 +10,3 @@ export const RoutersConfig = {
 		path: "/admin",
 	},
 } as const;
-
