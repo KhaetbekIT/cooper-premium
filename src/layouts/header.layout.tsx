@@ -54,10 +54,10 @@ export const HeaderLayout = ({
 
 								<Group className="gap-0">
 									<Link
-										href="tel:+998774433335"
+										href="tel:+998917753010"
 										className="text-md font-medium hover:text-red-01"
 									>
-										+998 (77) 443-33-35
+										+998 (91) 775-30-10
 									</Link>
 
 									<Group className="flex-row items-center gap-1.5">
@@ -80,10 +80,10 @@ export const HeaderLayout = ({
 
 						<Group className="flex-row items-center gap-4 justify-end lg:hidden">
 							<Link
-								href="tel:+998774433335"
+								href="tel:+9987753010"
 								className="text-md font-medium hover:text-red-01 w-fit shrink-0 hidden min-[420px]:inline-block"
 							>
-								+998 (77) 443-33-35
+								+998 (91) 775-30-10
 							</Link>
 
 							<button

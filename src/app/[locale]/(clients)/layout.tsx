@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { Toaster } from "@/components/ui/sonner";
-import { Footer } from "@/layouts/footer.layout";
-import { HeaderLayout } from "@/layouts/header.layout";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Toaster } from "@/components/ui/sonner";
 import { pudus } from "@/defaults/pudu.data";
 import { unitrees } from "@/defaults/unitrees.data";
+import { Footer } from "@/layouts/footer.layout";
+import { HeaderLayout } from "@/layouts/header.layout";
+import { Suspense } from "react";
 
 const productNames = [
 	...pudus.map((p) => p.name),
@@ -130,15 +131,16 @@ const ClientLayout = async ({ children }: LayoutProps<"/[locale]">) => {
 			</head>
 			<body className="min-h-screen flex flex-col justify-between">
 				<NextIntlClientProvider>
-					<NuqsAdapter>
-						<HeaderLayout className="shrink-0" />
+					<Suspense fallback={<div>Loading...</div>}>
+						<NuqsAdapter>
+							<HeaderLayout className="shrink-0" />
 
-						<main className="flex-1">{children}</main>
+							<main className="flex-1">{children}</main>
 
-						<Footer className="shrink-0" />
-
-						<Toaster />
-					</NuqsAdapter>
+							<Footer className="shrink-0" />
+							<Toaster />
+						</NuqsAdapter>
+					</Suspense>
 				</NextIntlClientProvider>
 			</body>
 		</>

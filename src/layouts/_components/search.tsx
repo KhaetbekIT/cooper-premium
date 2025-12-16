@@ -1,5 +1,8 @@
 "use client";
 
+import { Search as SearchIcon, X } from "lucide-react";
+import { useQueryStates } from "nuqs";
+import { startTransition } from "react";
 import { FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { RoutersConfig } from "@/configs/routers.config";
@@ -8,9 +11,6 @@ import { unitrees } from "@/defaults/unitrees.data";
 import { Link } from "@/i18n/navigation";
 import { searchParamsParsers } from "@/lib/search-params.util";
 import { cn } from "@/lib/utils";
-import { Search as SearchIcon, X } from "lucide-react";
-import { startTransition } from "react";
-import { useQueryStates } from "nuqs";
 
 export const Serach = () => {
 	const [{ query }, setQuery] = useQueryStates(searchParamsParsers);
