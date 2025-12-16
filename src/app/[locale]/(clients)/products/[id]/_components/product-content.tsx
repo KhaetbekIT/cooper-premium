@@ -55,7 +55,7 @@ export const ProductContent = ({ productId }: Props) => {
 					/>
 
 					<div
-						className="prose max-w-none prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-800 prose-ul:list-disc space-y-5 prose-td:p-5"
+						className="prose max-w-none space-y-5 prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-800 prose-ul:list-disc prose-table:overflow-x-auto prose-table:border prose-table:border-gray-200 prose-td:border prose-td:border-gray-200 prose-td:p-3 prose-th:p-3"
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 						dangerouslySetInnerHTML={{ __html: product.full_description }}
 					/>

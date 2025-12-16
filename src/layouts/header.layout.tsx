@@ -22,7 +22,7 @@ export const HeaderLayout = ({
 	const [mobileOpen, setMobileOpen] = useState(false);
 
 	useEffect(() => {
-		const handleScroll = () => setIsScrolled(window.scrollY > 150);
+		const handleScroll = () => setIsScrolled(window.scrollY > 15);
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
@@ -40,7 +40,7 @@ export const HeaderLayout = ({
 				<Container>
 					<Group className="flex-row items-center justify-between gap-4">
 						<Group className="flex-row items-center gap-4">
-							<Link href={RoutersConfig.client.home} className="w-[185px] h-16">
+							<Link href={RoutersConfig.client.home} className="w-46.25 h-16">
 								<Image
 									src={LogoImage}
 									alt="Logo"
