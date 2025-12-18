@@ -5,6 +5,7 @@ export const RoutersConfig = {
 		unitrees: "/unitrees",
 		pudus: "/pudus",
 		productsById: (id: string) => `/products/${id}`,
+		accessories: "/accessories",
 	},
 	admin: {
 		path: "/admin",

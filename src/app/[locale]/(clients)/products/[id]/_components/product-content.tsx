@@ -3,16 +3,14 @@
 import { useState } from "react";
 import { Container } from "@/components/widgets/container";
 import { Group } from "@/components/widgets/groups";
-import { pudus } from "@/defaults/pudu.data";
-import { unitrees } from "@/defaults/unitrees.data";
+import { products } from "@/defaults/products.data";
 import { useCartStore } from "@/stores/cart.store";
 import { AddToCartButton } from "./add-to-cart-button";
 import { ProductCarousel } from "./product-carousel";
 import { ProductQuantity } from "./product-quantity";
 
 export const ProductContent = ({ productId }: Props) => {
-	const allProducts = [...unitrees, ...pudus];
-	const product = allProducts.find((item) => item.id === productId);
+	const product = products.find((item) => item.id === productId);
 	const [quantity, setQuantity] = useState(1);
 	const addItem = useCartStore((s) => s.addItem);
 

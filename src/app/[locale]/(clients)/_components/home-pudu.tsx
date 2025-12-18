@@ -2,6 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/widgets/container";
+import { RoutersConfig } from "@/configs/routers.config";
+import { Link } from "@/i18n/navigation";
 
 export const HomePuduCC1 = () => {
 	return (
@@ -22,9 +24,14 @@ export const HomePuduCC1 = () => {
 							участия человека.
 						</p>
 
-						<Button variant={"black"} className="px-6 py-2">
-							Подробнее
-						</Button>
+						<Link
+							href={RoutersConfig.client.productsById("cc1-pro")}
+							className="inline-block"
+						>
+							<Button variant={"black"} className="px-6 py-2">
+								Подробнее
+							</Button>
+						</Link>
 					</div>
 
 					<div className="w-full flex justify-center">

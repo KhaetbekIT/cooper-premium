@@ -1,30 +1,26 @@
+import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { pudus } from "@/defaults/pudu.data";
-import { unitrees } from "@/defaults/unitrees.data";
+import { ENV } from "@/configs/env.config";
+import { products } from "@/defaults/products.data";
 import { Footer } from "@/layouts/footer.layout";
 import { HeaderLayout } from "@/layouts/header.layout";
-import { Suspense } from "react";
 
-const productNames = [
-	...pudus.map((p) => p.name),
-	...unitrees.map((u) => u.name),
-];
+const productNames = products.map((item) => item.name);
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://cooperai.uz"),
+	metadataBase: new URL(ENV.BASE_URL),
 
 	title: {
 		default: "CooperAI — Роботы Unitree и PUDU в Узбекистане",
 		template: "%s | CooperAI",
 	},
 
-	description: `
-CooperAI — официальный поставщик роботов Unitree и PUDU в Узбекистане.
-Продажа, интеграция, сервис и обучение.
-Каталог: ${productNames.join(", ")}.
+	description:
+		` CooperAI — официальный поставщик роботов Unitree и PUDU в Узбекистане. Продажа, интеграция, сервис и обучение. Каталог: ${productNames.join(", ")}.
 	`.trim(),
 
 	keywords: [
@@ -74,13 +70,11 @@ CooperAI — официальный поставщик роботов Unitree и
 	openGraph: {
 		type: "website",
 		locale: "ru_RU",
-		url: "https://cooperai.uz",
+		url: ENV.BASE_URL,
 		siteName: "CooperAI",
 		title: "CooperAI — Роботы Unitree и PUDU",
-		description: `
-Официальный каталог роботов Unitree и PUDU в Узбекистане.
-Модели: ${productNames.join(", ")}.
-Продажа, интеграция и сервис.
+		description:
+			` Официальный каталог роботов Unitree и PUDU в Узбекистане. Модели: ${productNames.join(", ")}. Продажа, интеграция и сервис.
 		`.trim(),
 		images: [
 			{
@@ -130,6 +124,36 @@ const ClientLayout = async ({ children }: LayoutProps<"/[locale]">) => {
 				<link rel="manifest" href="/site.webmanifest" />
 			</head>
 			<body className="min-h-screen flex flex-col justify-between">
+				<GoogleTagManager gtmId="GTM-NDZBTPDJ" />
+
+				<noscript>
+					<iframe
+						src="https://www.googletagmanager.com/ns.html?id=GTM-NSH2LDJT"
+						height="0"
+						width="0"
+						style={{ display: "none", visibility: "hidden" }}
+						title="Google Tag Manager"
+					/>
+
+					{/** biome-ignore lint/performance/noImgElement: <explanation> */}
+					<img
+						height="1"
+						width="1"
+						style={{ display: "none" }}
+						src="https://www.facebook.com/tr?id=1150212770641880&ev=PageView&noscript=1"
+						alt=""
+					/>
+
+					<div>
+						{/** biome-ignore lint/performance/noImgElement: <explanation> */}
+						<img
+							src="https://mc.yandex.ru/watch/105323764"
+							style={{ position: "absolute", left: "-9999px" }}
+							alt=""
+						/>
+					</div>
+				</noscript>
+
 				<NextIntlClientProvider>
 					<Suspense fallback={<div>Loading...</div>}>
 						<NuqsAdapter>

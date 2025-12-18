@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { ENV } from "@/configs/env.config";
 import { RoutersConfig } from "@/configs/routers.config";
-import { pudus } from "@/defaults/pudu.data";
-import { unitrees } from "@/defaults/unitrees.data";
+import { products } from "@/defaults/products.data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const baseUrl = ENV.BASE_URL;
@@ -28,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		},
 	];
 
-	const productRoutes: MetadataRoute.Sitemap = [...pudus, ...unitrees].map(
+	const productRoutes: MetadataRoute.Sitemap = [...products].map(
 		(item): MetadataRoute.Sitemap[number] => ({
 			url: `${baseUrl}${RoutersConfig.client.productsById(item.id)}`,
 			lastModified: new Date(),

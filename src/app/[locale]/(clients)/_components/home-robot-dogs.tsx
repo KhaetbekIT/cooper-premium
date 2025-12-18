@@ -3,9 +3,11 @@
 import UnitreeG1 from "@public/images/unitree-g1.jpg";
 import Image from "next/image";
 import { Container } from "@/components/widgets/container";
-import { unitrees } from "@/defaults/unitrees.data";
+import { products } from "@/defaults/products.data";
 
 export const HomeRobotDogs = () => {
+	const unitrees = products.filter((item) => item.category === "unitree");
+
 	return (
 		<section data-slot="robot-dog" className="py-20">
 			<Container>

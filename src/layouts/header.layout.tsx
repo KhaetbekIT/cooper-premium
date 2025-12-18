@@ -114,6 +114,12 @@ export const HeaderLayout = ({
 							>
 								Unitree
 							</Link>
+							<Link
+								href={RoutersConfig.client.accessories}
+								className="text-lg text-dark hover:text-red-01 uppercase"
+							>
+								Аксессуары
+							</Link>
 						</Group>
 					</Group>
 				</Container>

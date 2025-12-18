@@ -9,10 +9,7 @@ export const generateStaticParams = () => {
 };
 
 export const metadata: Metadata = {
-	title: {
-		default: "Cooper Premium",
-		template: "%s | Cooper Premium",
-	},
+	title: "Cooper AI",
 };
 
 const LocaleLayout = async ({ children, params }: LayoutProps<"/[locale]">) => {

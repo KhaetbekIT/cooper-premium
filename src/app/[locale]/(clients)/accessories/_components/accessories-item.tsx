@@ -4,18 +4,18 @@ import { RoutersConfig } from "@/configs/routers.config";
 import { Link } from "@/i18n/navigation";
 import type { Product } from "@/types/product.type";
 
-export const UnitreesItem = ({ unitreeData }: Props) => {
+export const AccessoriesItem = ({ accessoryData }: Props) => {
 	return (
 		<li
-			data-slot="unitrees-item"
+			data-slot="accessories-item"
 			className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md"
 		>
 			<Group className="gap-6 md:flex-row md:items-center md:justify-between">
 				<div className="flex-1 flex items-center justify-center">
-					{unitreeData.images[0] ? (
+					{accessoryData.images[0] ? (
 						<Image
-							src={unitreeData.images[0]}
-							alt={unitreeData.name}
+							src={accessoryData.images[0]}
+							alt={accessoryData.name}
 							width={320}
 							height={220}
 							className="h-auto w-full max-w-[320px] rounded-md object-cover"
@@ -29,17 +29,19 @@ export const UnitreesItem = ({ unitreeData }: Props) => {
 
 				<div className="flex-1 space-y-4 md:pl-6">
 					<h3 className="text-2xl font-semibold text-gray-900">
-						{unitreeData.name}
+						{accessoryData.name}
 					</h3>
 
 					<div
 						className="text-gray-700 leading-relaxed"
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-						dangerouslySetInnerHTML={{ __html: unitreeData.short_description }}
+						dangerouslySetInnerHTML={{
+							__html: accessoryData.short_description,
+						}}
 					/>
 
 					<Link
-						href={RoutersConfig.client.productsById(unitreeData.id)}
+						href={RoutersConfig.client.productsById(accessoryData.id)}
 						className="inline-block text-red-600 font-medium hover:underline"
 					>
 						Подробнее →
@@ -51,5 +53,5 @@ export const UnitreesItem = ({ unitreeData }: Props) => {
 };
 
 interface Props {
-	unitreeData: Product;
+	accessoryData: Product;
 }

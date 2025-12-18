@@ -1,59 +1,95 @@
 import type { ComponentProps } from "react";
 import { RoutersConfig } from "@/configs/routers.config";
-import { pudus } from "@/defaults/pudu.data";
-import { unitrees } from "@/defaults/unitrees.data";
+import { products } from "@/defaults/products.data";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 export const Footer = ({ className, ...props }: ComponentProps<"footer">) => {
+	const pudus = products.filter((item) => item.category === "pudu");
+	const unitrees = products.filter((item) => item.category === "unitree");
+	const accessories = products.filter((item) => item.category === "accessory");
+
 	return (
-		<footer className={cn("border-t bg-white mt-20", className)} {...props}>
-			<div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
-				<div className="space-y-3">
-					<h3 className="text-lg font-semibold">Навигация</h3>
-					<ul className="space-y-2 text-sm text-gray-700">
+		<footer
+			className={cn(
+				"mt-24 bg-linear-to-b from-gray-50 to-white border-t border-gray-200",
+				className,
+			)}
+			{...props}
+		>
+			<div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+				<div className="space-y-4">
+					<h3 className="text-sm font-semibold uppercase tracking-wide text-gray-900">
+						Навигация
+					</h3>
+					<ul className="space-y-2 text-sm text-gray-600">
 						<li>
 							<Link
 								href={RoutersConfig.client.home}
-								className="hover:text-black transition"
+								className="hover:text-gray-900 transition-colors underline-offset-4 hover:underline"
 							>
 								Главная
 							</Link>
 						</li>
 						<li>
-							<Link href={"#!"} className="hover:text-black transition">
+							<Link
+								href="#!"
+								className="hover:text-gray-900 transition-colors underline-offset-4 hover:underline"
+							>
 								О компании
 							</Link>
 						</li>
 					</ul>
 				</div>
 
-				<div className="space-y-3">
-					<h3 className="text-lg font-semibold">Продукты Unitree</h3>
-					<ul className="space-y-2 text-sm text-gray-700">
-						{unitrees.map((unitree) => (
-							<li key={unitree.id}>
+				<div className="space-y-4">
+					<h3 className="text-sm font-semibold uppercase tracking-wide text-gray-900">
+						Unitree
+					</h3>
+					<ul className="space-y-2 text-sm text-gray-600">
+						{unitrees.map((item) => (
+							<li key={item.id}>
 								<Link
-									href={RoutersConfig.client.productsById(unitree.id)}
-									className="hover:text-black transition"
+									href={RoutersConfig.client.productsById(item.id)}
+									className="hover:text-gray-900 transition-colors underline-offset-4 hover:underline"
 								>
-									{unitree.name}
+									{item.name}
 								</Link>
 							</li>
 						))}
 					</ul>
 				</div>
 
-				<div className="space-y-3">
-					<h3 className="text-lg font-semibold">Продукты PUDU</h3>
-					<ul className="space-y-2 text-sm text-gray-700">
-						{pudus.map((pudu) => (
-							<li key={pudu.id}>
+				<div className="space-y-4">
+					<h3 className="text-sm font-semibold uppercase tracking-wide text-gray-900">
+						PUDU
+					</h3>
+					<ul className="space-y-2 text-sm text-gray-600">
+						{pudus.map((item) => (
+							<li key={item.id}>
 								<Link
-									href={RoutersConfig.client.productsById(pudu.id)}
-									className="hover:text-black transition"
+									href={RoutersConfig.client.productsById(item.id)}
+									className="hover:text-gray-900 transition-colors underline-offset-4 hover:underline"
 								>
-									{pudu.name}
+									{item.name}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</div>
+
+				<div className="space-y-4">
+					<h3 className="text-sm font-semibold uppercase tracking-wide text-gray-900">
+						Аксессуары
+					</h3>
+					<ul className="space-y-2 text-sm text-gray-600">
+						{accessories.map((item) => (
+							<li key={item.id}>
+								<Link
+									href={RoutersConfig.client.productsById(item.id)}
+									className="hover:text-gray-900 transition-colors underline-offset-4 hover:underline"
+								>
+									{item.name}
 								</Link>
 							</li>
 						))}
@@ -61,8 +97,15 @@ export const Footer = ({ className, ...props }: ComponentProps<"footer">) => {
 				</div>
 			</div>
 
-			<div className="border-t py-6 text-center text-sm text-gray-500">
-				© {new Date().getFullYear()}. Все права защищены.
+			<div className="border-t border-gray-200">
+				<div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+					<span>
+						&copy; {new Date().getFullYear()} CooperAI. Все права защищены.
+					</span>
+					<span className="opacity-70">
+						Роботы для бизнеса и промышленности
+					</span>
+				</div>
 			</div>
 		</footer>
 	);

@@ -3,8 +3,7 @@ import type { Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { ENV } from "@/configs/env.config";
 import { RoutersConfig } from "@/configs/routers.config";
-import { pudus } from "@/defaults/pudu.data";
-import { unitrees } from "@/defaults/unitrees.data";
+import { products } from "@/defaults/products.data";
 import { redirect } from "@/i18n/navigation";
 import type { DynamicMetadata } from "@/types/type";
 import { ProductContent } from "./_components/product-content";
@@ -30,7 +29,8 @@ export const generateMetadata = async ({
 	const { id } = await params;
 	if (!id) return {};
 
-	const allProducts = [...pudus, ...unitrees];
+	const allProducts = products;
+
 	const product = allProducts.find((item) => item.id === id);
 	if (!product) return {};
 
@@ -70,7 +70,7 @@ export const generateMetadata = async ({
 			siteName: "CooperAI",
 			images: product.images?.length
 				? product.images.map((img) => ({
-						url: `${baseUrl}${img.src}`,
+						url: `${baseUrl}${typeof img === "string" ? img : img.src}`,
 						width: 1200,
 						height: 630,
 						alt: product.name,
@@ -83,7 +83,9 @@ export const generateMetadata = async ({
 			title: product.name,
 			description,
 			images: product.images?.length
-				? [`${baseUrl}${product.images[0]?.src}`]
+				? [
+						`${baseUrl}${typeof product.images[0] === "string" ? product.images[0] : product.images[0]?.src}`,
+					]
 				: undefined,
 		},
 

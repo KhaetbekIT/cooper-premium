@@ -1,7 +1,7 @@
 import type { StaticImageData } from "next/image";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { PuduType } from "@/defaults/pudu.data";
+import type { Product } from "@/types/product.type";
 
 export const useCartStore = create<CartStoreType>()(
 	persist(
@@ -45,8 +45,7 @@ export const useCartStore = create<CartStoreType>()(
 	),
 );
 
-export interface CartItem
-	extends Omit<PuduType, "full_description" | "images"> {
+export interface CartItem extends Omit<Product, "full_description" | "images"> {
 	image: string | StaticImageData;
 	quantity: number;
 }

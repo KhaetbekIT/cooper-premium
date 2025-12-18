@@ -6,8 +6,7 @@ import { startTransition } from "react";
 import { FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { RoutersConfig } from "@/configs/routers.config";
-import { pudus } from "@/defaults/pudu.data";
-import { unitrees } from "@/defaults/unitrees.data";
+import { products } from "@/defaults/products.data";
 import { Link } from "@/i18n/navigation";
 import { searchParamsParsers } from "@/lib/search-params.util";
 import { cn } from "@/lib/utils";
@@ -15,7 +14,7 @@ import { cn } from "@/lib/utils";
 export const Serach = () => {
 	const [{ query }, setQuery] = useQueryStates(searchParamsParsers);
 
-	const allProducts = [...pudus, ...unitrees].filter((item) =>
+	const allProducts = products.filter((item) =>
 		item.name.toLowerCase().includes(query.toLowerCase()),
 	);
 
